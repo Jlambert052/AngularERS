@@ -1,0 +1,31 @@
+<div id="component">
+    <app-head [pageTitle]="pageTitle"></app-head>
+    <main id="main">
+        <a routerLink="/emp/create">Create New Employee</a>
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Admin</td>
+                    <td>Expenses Due</td>
+                    <td>Expenses Paid</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of emps"> 
+
+                    <td>{{e.id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.admin}}</td>
+                    <td>{{e.expensesDue | currency}}</td>
+                    <td>{{e.expensesPaid | currency}}</td>
+                    <td><a routerLink="/emp/detail/{{e.id}}">Detail</a> | <a routerLink="/emp/change/{{e.id}}">Change</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>

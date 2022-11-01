@@ -1,0 +1,37 @@
+<div id="component">
+    <app-head [pageTitle]="pageTitle"></app-head>
+    <main id="main">
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td><input [(ngModel)]="emp.id" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><input [(ngModel)]="emp.name" type="text" [disabled]="IsDetail"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input [(ngModel)]="emp.email" type="text" [disabled]="IsDetail" size="35"></td>
+                </tr>
+                <tr>
+                    <th>Admin</th>
+                    <td><input [(ngModel)]="emp.admin" type="checkbox" [disabled]="IsDetail"></td>
+                </tr>
+                <tr>
+                    <th>Expenses Due</th>
+                    <td><input [(ngModel)]="emp.expensesDue" type="number" disabled></td>
+                </tr>
+                <tr>
+                    <th>Expenses Paid</th>
+                    <td><input [(ngModel)]="emp.expensesPaid" type="number" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <button (click)="save()" class="btn btn-info">Save</button>
+        </div>
+    </main>
+</div>

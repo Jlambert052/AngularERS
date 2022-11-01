@@ -1,0 +1,15 @@
+<div id="component">
+    <table class="table table-sm">
+        <tr>
+            <th>Email</th>
+            <td><input [(ngModel)]="email"></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td><input [(ngModel)]="password" type="password"></td>
+        </tr>
+
+    </table>
+    <button (click)="login()" class="btn btn-dark">Login go Brrr</button>
+    <div class="text-danger h3">{{ message }}</div>
+</div>
