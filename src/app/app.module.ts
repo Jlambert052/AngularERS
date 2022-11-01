@@ -16,6 +16,8 @@ import { HeadComponent } from './common/head/head.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 import { BoolDisplayPipe } from './common/bool-display.pipe';
+import { EmpSearchPipe } from './employee/emp-search.pipe';
+import { SortPipe } from './common/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { BoolDisplayPipe } from './common/bool-display.pipe';
     HeadComponent,
     FooterComponent,
     EmployeeLoginComponent,
-    BoolDisplayPipe
+    BoolDisplayPipe,
+    EmpSearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, 

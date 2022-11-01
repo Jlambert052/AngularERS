@@ -2,3 +2,6 @@
 input, select {
     border-radius: 10px;
 }
+.noborder {
+    border-width: 0;
+}

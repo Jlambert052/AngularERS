@@ -1,26 +1,27 @@
 <div id="component">
     <app-head [pageTitle]="pageTitle"></app-head>
     <main id="main">
-        <a routerLink="/emp/create">Create New Employee</a>
+        <a routerLink="/emp/create">Create New Employee</a> |
+        <input [(ngModel)]="searchCriteria" placeholder="Search" class="noborder">
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
-                    <td>Id</td>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Admin</td>
-                    <td>Expenses Due</td>
-                    <td>Expenses Paid</td>
-                    <td>Action</td>
+                    <th><button (click)="sortBy('id')" class="btn btn-link">Id</button></th>
+                    <th><button (click)="sortBy('name')" class="btn btn-link">Name</button></th>
+                    <th><button (click)="sortBy('email')" class="btn btn-link">Email</button></th>
+                    <th>Admin</th>
+                    <th>Expenses Due</th>
+                    <th>Expenses Paid</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let e of emps"> 
+                <tr *ngFor="let e of emps | empSearch:searchCriteria | sort: sortColumn : sortAsc"> 
 
                     <td>{{e.id}}</td>
                     <td>{{e.name}}</td>
                     <td>{{e.email}}</td>
-                    <td>{{e.admin}}</td>
+                    <td>{{e.admin | bool }}</td>
                     <td>{{e.expensesDue | currency}}</td>
                     <td>{{e.expensesPaid | currency}}</td>
                     <td><a routerLink="/emp/detail/{{e.id}}">Detail</a> | <a routerLink="/emp/change/{{e.id}}">Change</a></td>
